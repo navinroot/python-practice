@@ -120,6 +120,9 @@ class BinarySearchTree:
             current_node.rchild = self.delete_node(current_node.rchild, key)
         # Delete the node if root.value == key
         else:
+            # deletion node is leaf node
+            if not current_node.rchild and not current_node.lchild:
+                return None
             # If there is no right children delete the node and new root would be root.left
             if not current_node.rchild:
                 return current_node.lchild
